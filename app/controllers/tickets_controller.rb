@@ -10,7 +10,7 @@ class TicketsController < ApplicationController
     end
 
     def create
-        @ticket = current_user.tickets.build(ticket_params)
+        @ticket = current_technician.tickets.build(ticket_params)
         if @ticket.save
             redirect_to ticket_path(@ticket)
         else 
@@ -23,7 +23,7 @@ class TicketsController < ApplicationController
     end
 
     def edit
-        if @ticket.technician.id == current_user.id
+        if @ticket.technician.id == current_technician.id
             render :edit
         else
             redirect_to ticket_path(@ticket)
@@ -39,7 +39,7 @@ class TicketsController < ApplicationController
     end
 
     def destroy
-        if @ticket.technician.id == current_user.id
+        if @ticket.technician.id == current_technician.id
             @ticket.destroy
             redirect_to tickets_path
         else
