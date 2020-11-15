@@ -1,0 +1,22 @@
+<%= form_for(@ticket) do |f| %>
+<%= f.label :ticket_number %>
+<%= f.text_field :ticket_number %>
+<%= f.label :asset %>
+<%= f.text_field :asset%>
+<%= f.label :issue %>
+<%= f.text_area :issue %>
+<%= f.label :priority %>
+<%= f.text_field :priority %>
+<%= f.hidden_field :end_user_id %>
+<%= f.submit %>
+<% end %>
+
+
+
+
+#  t.string   "ticket_number"
+#     t.string   "asset"
+#     t.text     "issue"
+#     t.string   "priority"
+#     t.integer  "technician_id"
+#     t.integer  "end_user_id"
