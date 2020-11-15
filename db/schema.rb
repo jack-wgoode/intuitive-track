@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201114021758) do
+ActiveRecord::Schema.define(version: 20201115211903) do
 
   create_table "end_users", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +28,19 @@ ActiveRecord::Schema.define(version: 20201114021758) do
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.string   "ticket_number"
+    t.string   "asset"
+    t.text     "issue"
+    t.string   "priority"
+    t.integer  "technician_id"
+    t.integer  "end_user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["end_user_id"], name: "index_tickets_on_end_user_id"
+    t.index ["technician_id"], name: "index_tickets_on_technician_id"
   end
 
 end

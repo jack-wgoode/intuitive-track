@@ -8,7 +8,7 @@ class TechniciansController < ApplicationController
     end
 
 
-yarn --version
+
     private
 
     def set_tech
