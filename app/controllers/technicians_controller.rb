@@ -1,12 +1,14 @@
 class TechniciansController < ApplicationController
     before_action :set_order, only: [:show, :edit, :update, :destroy]
 #     before_action :authenticate_user!
-      before_action :set_tech
+    #   before_action :set_tech
 
     def index
         @technicians = Technician.all 
     end
 
+
+yarn --version
     private
 
     def set_tech
