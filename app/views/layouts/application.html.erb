@@ -9,6 +9,17 @@
   </head>
 
   <body>
+  <nav>
+  <% if current_technician %>
+    <%= link_to "New Ticket", new_ticket_path  %>
+  <%= form_tag(destroy_technician_session_path, method: :delete, style:'display: inline-block') do %>
+     <%=submit_tag "Sign out" %>
+    <% end %>
+  <% else %>
+   <%= link_to "Login", new_technician_session_path %> |
+   <%= link_to "Sign Up", new_technician_registration_path %>
+  <% end %>
+   </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

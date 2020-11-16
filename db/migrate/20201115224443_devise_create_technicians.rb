@@ -38,7 +38,7 @@ class DeviseCreateTechnicians < ActiveRecord::Migration[5.0]
     end
 
     add_index :technicians, :email,                unique: true
-    add_index :technicians, :reset_password_token, unique: true
+    #add_index :technicians, :reset_password_token, unique: true
     # add_index :technicians, :confirmation_token,   unique: true
     # add_index :technicians, :unlock_token,         unique: true
   end

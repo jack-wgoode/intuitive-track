@@ -10,6 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20201115224443) do
+
+  create_table "end_users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "employee_number"
+    t.string   "department"
+    t.string   "email"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "technicians", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "department"
+    t.string   "cert_level"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_technicians_on_email", unique: true
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.string   "ticket_number"
+    t.string   "asset"
+    t.text     "issue"
+    t.string   "priority"
+    t.integer  "technician_id"
+    t.integer  "end_user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["end_user_id"], name: "index_tickets_on_end_user_id"
+    t.index ["technician_id"], name: "index_tickets_on_technician_id"
+  end
 
 end

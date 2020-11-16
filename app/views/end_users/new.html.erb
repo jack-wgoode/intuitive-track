@@ -1,0 +1,23 @@
+<%= form_for(@end_user) do |f| %>
+<p>
+<%= f.label :name %>
+</p>
+<%= f.text_field :name %>
+<p>
+<%= f.label :employee_number %>
+</p>
+<%= f.text_field :employee_number %>
+<p>
+<%= f.label :department %>
+</p>
+<%= f.text_area :department %>
+<p>
+<%= f.label :email %>
+</p>
+<%= f.text_field :email %>
+
+<p>
+<%= f.submit %>
+</p>
+<% end %>
+
