@@ -2,7 +2,7 @@ class EndUsersController < ApplicationController
     before_action :set_ticket, only: [:show, :edit, :update, :destroy]
 
     def index
-        @end_users = end_user.all 
+        @end_users = EndUser.all 
     end
 
     def new

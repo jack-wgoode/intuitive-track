@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
 
     protected
     def configure_permitted_parameters
-        devise_parameter_sanitizer.permit(:sign_up, keys: [:date_of_birth])  #correct the params for my schema 
+        devise_parameter_sanitizer.permit(:sign_up, keys: [:emailTechnician])  #correct the params for my schema 
     end
 end
