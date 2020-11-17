@@ -1,5 +1,5 @@
 class EndUsersController < ApplicationController
-    before_action :set_ticket, only: [:show, :edit, :update, :destroy]
+    before_action :set_end_user, only: [:show, :edit, :update, :destroy]
 
     def index
         @end_users = EndUser.all 
@@ -51,7 +51,7 @@ class EndUsersController < ApplicationController
     private
 
     def set_end_user
-        @end_user = end_user.find(params[:id])
+        @end_user = EndUser.find(params[:id])
     end
 
     def end_user_params

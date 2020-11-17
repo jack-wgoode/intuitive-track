@@ -5,14 +5,16 @@ class TicketsController < ApplicationController
         @tickets = Ticket.all 
     end
 
-    def new
-        @ticket = Ticket.new(end_user_id: params[:end_user_id])
+    def new 
+        @ticket = Ticket.new
+       
     end
 
     def create
         @ticket = current_technician.tickets.build(ticket_params)
        
         if @ticket.save
+            byebug
             redirect_to tickets_path
         else 
             render :new
@@ -55,7 +57,7 @@ class TicketsController < ApplicationController
     end
 
     def ticket_params
-        params.require(:ticket).permit(:ticket_number, :asset, :issue, :priority, :end_user_id)
+        params.require(:ticket).permit(:ticket_number, :asset, :issue, :priority) #end_user_id
     end
 
 
