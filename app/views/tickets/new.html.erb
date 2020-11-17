@@ -4,7 +4,12 @@
 </p>
 <%= f.text_field :ticket_number %>
 <p>
+<%= f.label :employee_name %>
+<p>
+<%= collection_select(:ticket, :end_user_id, EndUser.all, :id, :name, prompt: true) %>
+</p>
 <%= f.label :asset %>
+</p>
 </p>
 <%= f.text_field :asset%>
 <p>

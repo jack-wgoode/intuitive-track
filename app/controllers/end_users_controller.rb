@@ -58,5 +58,10 @@ class EndUsersController < ApplicationController
         params.require(:end_user).permit(:name, :employee_number, :department, :email)
     end
 
+    def id_from_name
+        @end_user = EndUser.find_by_name(params[:name])
+        @end_user.id
+    end
+
 
 end

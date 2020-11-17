@@ -60,6 +60,5 @@ class TicketsController < ApplicationController
         params.require(:ticket).permit(:ticket_number, :asset, :issue, :priority) #end_user_id
     end
 
-
-
+    
 end
