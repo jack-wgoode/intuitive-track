@@ -1,0 +1,11 @@
+<h1>Ticket Details</h1>
+<p>Ticket Number: <%= link_to @ticket.ticket_number,   %>
+<p>Asset Type: <%= @ticket.asset %></p>
+<p>Doctor: <%= link_to @ticket.doctor_name, doctor_path(@ticket.doctor) %></p>
+<p>Location: <%= @ticket.location %></p>
+<p>Start Time: <%= @ticket.start_time.strftime('%b %e, %l:%M %p') %></p>
+<p>End Time: <%= @ticket.end_time.strftime('%b %e, %l:%M %p') %></p>
+<%= link_to "Edit Ticket", edit_ticket_path(@ticket) %>
+<%= form_tag(ticket_path(@ticket), method: :delete, style: 'display: inline-block;') do %>
+  <%= submit_tag "Delete ticket" %>
+<% end %>

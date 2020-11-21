@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   #devise_for :technicians
-  resources :tickets
-  resources :end_users
+  resources :tickets do
+    resources :end_users
+  end
+  resources :end_users do
+    resources :tickets
+  end
   devise_for :technicians, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "tickets#index"

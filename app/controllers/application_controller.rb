@@ -13,3 +13,8 @@ class ApplicationController < ActionController::Base
         devise_parameter_sanitizer.permit(:sign_up, keys: [:emailTechnician])  #correct the params for my schema 
     end
 end
+
+
+
+
+   
