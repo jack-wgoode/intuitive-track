@@ -11,9 +11,11 @@
   <body>
   <nav>
   <% if current_technician %>
-    <%= link_to "New Ticket", new_ticket_path  %>
   <%= form_tag(destroy_technician_session_path, method: :delete, style:'display: inline-block') do %>
      <%=submit_tag "Sign out" %>
+    <%= link_to "New Ticket", new_ticket_path  %> |
+    <%= link_to "New Employee", new_end_user_path  %> |
+  
     <% end %>
   <% else %>
    <%= link_to "Login", new_technician_session_path %> |

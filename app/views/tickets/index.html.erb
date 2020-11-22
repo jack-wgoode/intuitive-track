@@ -1,7 +1,14 @@
 <% @tickets.each do |ticket| %>
-<p><%= link_to( :select, ticket_path(ticket)) %>
-    <%= ticket.ticket_number  %>
-<%= ticket.issue %>
+<p>
+    <%= link_to( :select, ticket_path(ticket.id)) %>
+</p>
+ Ticket Number: <%= ticket.ticket_number  %> 
+<p>
+ Asset: <%= ticket.asset %>
+</p>
+ Priority: <%= ticket.priority %>
+<p>
+____________________
 </p>
   
 <% end %>

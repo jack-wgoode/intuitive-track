@@ -1,8 +1,13 @@
 <h1>Ticket Details</h1>
-<p>Ticket Number: <%= link_to @ticket.ticket_number,   %>
+<p>Priority: <%= @ticket.priority %></p>
+<p>Ticket Number: <%= @ticket.ticket_number  %>
 <p>Asset Type: <%= @ticket.asset %></p>
-<p>Tech Assigned: <%= link_to @ticket.tceh.full_name, doctor_path(@ticket.technician) %></p>
-<p>Location: <%= @ticket.end_user.department %></p>
+<p>Issue: <%= @ticket.issue %></p>
+<p>Tech Assigned: <%= @ticket.technician.full_name %></p>
+<p>Department: <%= @ticket.end_user.department %></p>
+<p>Employee: <%= @ticket.end_user.name %></p>
+<p>Email: <%= @ticket.end_user.email %></p>
+
 
 <%= link_to "Edit Ticket", edit_ticket_path(@ticket) %>
 <%= form_tag(ticket_path(@ticket), method: :delete, style: 'display: inline-block;') do %>
