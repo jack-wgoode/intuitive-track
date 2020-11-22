@@ -30,11 +30,11 @@ class TicketsController < ApplicationController
     end
 
     def edit
-        if @ticket.technician.id == current_technician.id
-            render :edit
-        else
-            redirect_to ticket_path(@ticket)
-        end
+        # if @ticket.technician.id == current_technician.id
+        #     render :edit
+        # else
+        #     redirect_to ticket_path(@ticket)
+        # end
     end
 
     def update

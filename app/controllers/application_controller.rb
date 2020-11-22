@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
-    #before_action :authenticate_admin!#, only: [:action]
+    before_action :authenticate_admin!, only: [:action]
     rescue_from ActiveRecord::RecordNotFound, with: :not_found 
     def not_found
         flash[:error] = "Not Found"
