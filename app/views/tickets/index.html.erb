@@ -1,5 +1,6 @@
 <% @tickets.each do |ticket| %>
-<p><%= ticket.ticket_number  %>
+<p><%= link_to( :select, ticket_path(ticket)) %>
+    <%= ticket.ticket_number  %>
 <%= ticket.issue %>
 </p>
   

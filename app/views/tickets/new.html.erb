@@ -4,7 +4,11 @@
 </p>
 <%= f.text_field :ticket_number %>
 <p>
+    <%= f.label :employee %>
+<p>
+    <%= f.collection_select(:end_user_id, EndUser.all, :id, :name, :prompt => 'Select') %>
 
+</p>
 
 </p>
 <%= f.label :asset %>
@@ -19,6 +23,12 @@
 <%= f.label :priority %>
 </p>
 <%= f.text_field :priority %>
+<p>
+<%= f.label :technician %>
+</p>
+    <%= f.collection_select(:technician_id, Technician.all, :id, :full_name, :prompt => 'Select') %>
+
+</p>
 
 
     
