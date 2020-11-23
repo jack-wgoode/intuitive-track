@@ -16,6 +16,6 @@ class TechniciansController < ApplicationController
     end
 
     def tech_params
-        @permitted = params.require(:name).permit(:name, :department, :cert_level, :email)
+        @permitted = params.require(:name).permit(:full_name, :tech_number, :department, :cert_level, :email)
     end
 end

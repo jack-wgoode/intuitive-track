@@ -1,17 +1,8 @@
-<%= show_errors_for(ticket) %>
-<%= form_for ticket do |f| %>
-  <p>
-    <% if ticket.end_user_id %>
-      <%= f.label :end_user_id, "Employee" %>
-      <%= f.hidden_field :end_user_id %>
-      <%= ticket.end_user.name %>
-    <% else %>
-    <%= form_for (@ticket) do |f| %>
+<%= form_for (@ticket) do |f| %>
 <p>
 <%= f.label :ticket_number %>
 </p>
 <%= f.text_field :ticket_number %>
-<%end%>
 <p>
     <%= f.label :employee %>
 <p>
@@ -38,7 +29,77 @@
     <%= f.collection_select(:technician_id, Technician.all, :id, :full_name, :prompt => 'Select') %>
 
 </p>
- 
+
+<p>
+<%= f.submit %>
+</p>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <%= form_for ticket do |f| %>
+  <p>
+    
+    <%= form_for (@ticket) do |f| %>
+<p>
+<%= f.label :ticket_number %>
+</p>
+<%= f.text_field :ticket_number %>
+    
+<p>
+    <% if ticket.end_user_id %>
+      <%= f.label :end_user_id, "Employee" %>
+      <%= f.hidden_field :end_user_id %>
+      <%= ticket.end_user.name %>
+    <% else %>
+    <%= f.label :employee %>
+<p>
+    <%= f.collection_select(:end_user_id, EndUser.all, :id, :name, :prompt => 'Select') %>
+    <% end %>
+</p>
+
+</p>
+<%= f.label :asset %>
+</p>
+</p>
+<%= f.text_field :asset%>
+<p>
+<%= f.label :issue %>
+</p>
+<%= f.text_area :issue %>
+<p>
+<%= f.label :priority %>
+</p>
+<%= f.text_field :priority %>
+<p>
+<%= f.label :technician %>
+</p>
+    <%= f.collection_select(:technician_id, Technician.all, :id, :full_name, :prompt => 'Select') %>
+
+</p>
+<%end%>
 
 <p>
 <%= f.submit %>
@@ -46,7 +107,7 @@
 
 <% end %>
 
-
+ -->
 
 
 
