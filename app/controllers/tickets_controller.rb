@@ -6,7 +6,7 @@ class TicketsController < ApplicationController
     end
 
     def new 
-        @technician = Ticket.new
+        @ticket = Ticket.new
         # if @end_user
         #     @id = @end_user.id
         # else
@@ -15,10 +15,9 @@ class TicketsController < ApplicationController
     end
 
     def create
-        @technician = Ticket.new(ticket_params)
+        @ticket = Ticket.new(ticket_params)
        
-        if @technician.save
-            
+        if @ticket.save
             redirect_to tickets_path
         else 
             render :new
@@ -34,22 +33,22 @@ class TicketsController < ApplicationController
     end
 
     def update
-        if @technician.update(ticket_params)
-            redirect_to technician_path(@technician)
+        if @ticket.update(ticket_params)
+            redirect_to ticket_path(@ticket)
         else 
             render :edit
         end
     end
 
     def destroy
-        @technician.destroy
-        redirect_to technician_path
+        @ticket.destroy
+        redirect_to tickets_path
     end
 
     private
 
     def set_ticket
-        @technician = Ticket.find(params[:id])
+        @ticket = Ticket.find(params[:id])
     end
 
     def ticket_params
