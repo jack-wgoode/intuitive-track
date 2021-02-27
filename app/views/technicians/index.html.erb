@@ -1,0 +1,5 @@
+<h1>Technicians Roster</h1>
+<% @technicians.each do |technician| %>
+<%= link_to technician.name, technician_path(technician) %>
+<br>
+<% end %>

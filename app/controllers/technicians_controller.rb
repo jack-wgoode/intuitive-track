@@ -1,7 +1,7 @@
 class TechniciansController < ApplicationController
-    before_action :set_order, only: [:show, :edit, :update, :destroy]
+    before_action :set_tech, only: [:index, :show, :edit, :update, :destroy]
     before_action :authenticate_user!
-      before_action :set_tech
+    #   before_action :set_tech
 
     def index
         @technicians = Technician.all 
